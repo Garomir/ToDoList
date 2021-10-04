@@ -13,7 +13,7 @@
         <h3>Новая заметка</h3>
         <form th:action="@{/notes}" th:object="${note}" method="post">
             <span>Text</span>
-            <input name="text"/>
+            <textarea name="text"></textarea>
             <button type="submit">Добавить</button>
         </form>
         <h3>Мои заметки:</h3>
@@ -21,12 +21,18 @@
             <thead>
             <tr>
                 <th scope="col">Text</th>
+                <th scope="col">Done</th>
                 <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="note : ${notes}">
                 <td th:text="${note.text}"/>
+                <td>
+                    <form th:action="@{'/notes/' + ${note.id}}" method="post">
+                        <input type="checkbox" name="done" th:checked="${note.done}">
+                    </form>
+                </td>
                 <td>
                     <form th:action="@{'/notes/' + ${note.id}}" method="get">
                         <button class="btn btn-dark" type="submit">Удалить</button>

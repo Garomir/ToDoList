@@ -36,6 +36,7 @@ public class NotesController {
         List<Note> notes = noteService.findNotesByUserId(user.getId());
         model.addAttribute("notes", notes);
         model.addAttribute("note", new Note());
+        model.addAttribute("username", principal.getName());
         return "notes";
     }
 
@@ -50,6 +51,15 @@ public class NotesController {
     @GetMapping("/{id}")
     public String deleteNote(@PathVariable("id") int id){
         noteService.deleteNote(id);
+        return "redirect:/notes";
+    }
+
+    @PostMapping("/{id}")
+    public String setDone(@PathVariable("id") int id,
+                          @ModelAttribute(value = "done") boolean done){
+        Note note = noteService.findNote(id);
+        note.setDone(done);
+        noteService.updateNote(id, note);
         return "redirect:/notes";
     }
 }
