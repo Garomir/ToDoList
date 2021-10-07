@@ -56,9 +56,13 @@ public class NotesController {
 
     @PostMapping("/{id}")
     public String setDone(@PathVariable("id") int id,
-                          @ModelAttribute(value = "done") boolean done){
+                          @ModelAttribute(value = "done") String done){
         Note note = noteService.findNote(id);
-        note.setDone(done);
+        if (done.equals("on")){
+            note.setDone(true);
+        } else {
+            note.setDone(false);
+        }
         noteService.updateNote(id, note);
         return "redirect:/notes";
     }

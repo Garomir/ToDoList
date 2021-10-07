@@ -10,12 +10,13 @@
     <header th:insert="blocks/header :: header"></header>
 
     <div class="container mt-5">
-        <h3>Новая заметка</h3>
         <form th:action="@{/notes}" th:object="${note}" method="post">
-            <span>Text</span>
-            <textarea name="text"></textarea>
+            <span>Новая заметка</span>
+            <input type="text" name="text"/>
             <button type="submit">Добавить</button>
         </form>
+    </div>
+    <div class="container mt-5">
         <h3>Мои заметки:</h3>
         <table class="table">
             <thead>
@@ -29,8 +30,12 @@
             <tr th:each="note : ${notes}">
                 <td th:text="${note.text}"/>
                 <td>
+                    <!--<form th:action="@{'/notes/' + ${note.id}}" method="post">
+                        <input type="checkbox" th:name="done" th:value="${note.done}" th:checked="${note.done}">
+                    </form>-->
                     <form th:action="@{'/notes/' + ${note.id}}" method="post">
-                        <input type="checkbox" name="done" th:checked="${note.done}">
+                        <input type="checkbox" th:name="done" th:checked="${note.done}"/>
+                        <button type="submit">Done</button>
                     </form>
                 </td>
                 <td>
