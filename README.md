@@ -21,6 +21,7 @@
 <h2><a name="tehnologies">Технологии</a></h2>
   <ul>
     <li>Spring Boot</li>
+    <li>Spring Data Jpa</li>
     <li>Hibernate</li>
     <li>MySQL</li>
     <li>Java 11</li>
@@ -36,6 +37,12 @@
       <p>1.1 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/Note.java">Note</a> - Модель заметки из БД</p>
       <p>1.2 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/User.java">User</a> - Модель пользователя из БД</p>
       <p>1.3 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/Role.java">Role</a> - Модель роли пользователя из БД</p>
+    </li>
+    <li>
+      <p>Репозитории Jpa:</p>
+      <p>2.1 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/repos/NoteRepo.java">NoteRepo</a> - Интерфейс для взаимодействия с заметками из БД</p>
+      <p>2.2 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/repos/UserRepo.java">UserRepo</a> - Интерфейс для взаимодействия с пользователями из БД</p>
+      <p>2.3 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/repos/RoleRepo.java">RoleRepo</a> - Интерфейс для взаимодействия с ролями пользователей из БД</p>
     </li>
   </ol>
 <h2><a name="interface">Интерфейс</a></h2>
