@@ -17,4 +17,4 @@
 
 <h2><a name="interface">Интерфейс</a></h2>
 
-<h2<a name="author">Автор</a></h2
+<h2><a name="author">Автор</a></h2
