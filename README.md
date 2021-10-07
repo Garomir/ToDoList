@@ -44,6 +44,14 @@
       <p>2.2 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/repos/UserRepo.java">UserRepo</a> - Интерфейс для взаимодействия с пользователями из БД</p>
       <p>2.3 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/repos/RoleRepo.java">RoleRepo</a> - Интерфейс для взаимодействия с ролями пользователей из БД</p>
     </li>
+    <li>
+      <p>Сервисный слой с бизнес-логикой:</p>
+      <p>3.1 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/services/NoteService.java">NoteService</a> - Интерфейс со списком методов по работе с заметками</p>
+      <p>3.2 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/services/NoteServiceImpl.java">NoteServiceImpl</a> - Реализация методов из интерфейса NoteService</p>
+      <p>3.3 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/services/UserService.java">UserService</a> - Интерфейс со списком методов по работе с пользователями</p>
+      <p>3.4 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/services/UserServiceImpl.java">UserServiceImpl</a> - Реализация методов из интерфейса UserService</p>
+      <p>3.5 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/services/UserDetailsServiceImpl.java">UserDetailsServiceImpl</a> - Реализация интерфейса UserDetailsService для преобразования пользователя в UserDetails</p>
+    </li>
   </ol>
 <h2><a name="interface">Интерфейс</a></h2>
 
