@@ -1,1 +1,1 @@
-<h6>Проект "ToDo List"</h6>
+<h1>Проект "ToDo List"</h1>
