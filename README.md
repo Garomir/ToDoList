@@ -19,9 +19,25 @@
     <li>Пометить заметку как выполненную</li>
   </ul>
 <h2><a name="tehnologies">Технологии</a></h2>
-
+  <ul>
+    <li>Spring Boot</li>
+    <li>Hibernate</li>
+    <li>MySQL</li>
+    <li>Java 11</li>
+    <li>Spring Security</li>
+    <li>Thymeleaf</li>
+    <li>HTML, Bootstrap</li>
+  </ul>
 <h2><a name="architecture">Архитектура</a></h2>
-
+  <h4>Проект реализован по шаблону MVC и разделён на слои:</h4>
+  <ol>
+    <li>
+      <p>Сущности данных:</p>
+      <p>1.1 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/Note.java">Note</a> - Модель заметки из БД</p>
+      <p>1.2 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/User.java">User</a> - Модель пользователя из БД</p>
+      <p>1.3 <a href="https://github.com/Garomir/ToDoList/blob/main/src/main/java/com/ramich/ToDoList/entities/Role.java">Role</a> - Модель роли пользователя из БД</p>
+    </li>
+  </ol>
 <h2><a name="interface">Интерфейс</a></h2>
 
 <h2><a name="author">Автор</a></h2>
