@@ -56,42 +56,42 @@
 <h2><a name="interface">Интерфейс</a></h2>
   <ul>
     <li>
-      <p>Стартовая страница
+      <p>Стартовая страница</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/home.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/home.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>  
     </li>
     <li>
-      <p>Интерфейс
+      <p>Интерфейс</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>  
     </li>
     <li>
-      <p>Регистрация
+      <p>Регистрация</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/registration.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/registration.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>  
     </li>
     <li>
-      <p>Аутентификация
+      <p>Аутентификация</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/login.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/login.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>
     </li>
     <li>
-      <p>Добавление заметки
+      <p>Добавление заметки</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/addnote.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/addnote.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>
     </li>
     <li>
-      <p>Отметка о выполнении
+      <p>Отметка о выполнении</br>
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/setdone.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/setdone.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
