@@ -54,5 +54,19 @@
     </li>
   </ol>
 <h2><a name="interface">Интерфейс</a></h2>
-
+  <ul>
+    <li>
+      Интерфейс
+      <a target="_blank" rel="noopener noreferrer" href="/Garomir/ToDoList/blob/main/img/interface.JPG">
+        <img src="/Garomir/ToDoList/blob/main/img/interface.JPG" alt="ScreenShot" style="max-width: 100%;">
+      </a>
+    </li>
+    <li>Spring Data Jpa</li>
+    <li>Hibernate</li>
+    <li>MySQL</li>
+    <li>Java 11</li>
+    <li>Spring Security</li>
+    <li>Thymeleaf</li>
+    <li>HTML, Bootstrap</li>
+  </ul>
 <h2><a name="author">Автор</a></h2>
