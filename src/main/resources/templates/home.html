@@ -14,17 +14,16 @@
                 <span class="fs-4">ToDoList</span>
             </a>
 
-            <!--<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                <a class="me-3 py-2 text-dark text-decoration-none" href="/">Главная</a>
-                <a class="me-3 py-2 text-dark text-decoration-none" href="/about">Про нас</a>
-            </nav>-->
-
             <div class="col-md-3 text-end">
                 <a th:href="@{/login}" class="btn btn-primary">Login</a>
                 <a th:href="@{/registration}" class="btn btn-primary">Sign-up</a>
             </div>
         </div>
     </header>
+
+    <div class="container mt-5">
+        <h3>ToDo List - это приложение, в котором Вы можете создавать заметки, задачи и следить за их выполнением.</h3>
+    </div>
 
     <div th:insert="blocks/footer :: footer"></div>
 </div>

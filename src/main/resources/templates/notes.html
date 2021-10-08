@@ -11,8 +11,8 @@
 
     <div class="container mt-5">
         <form th:action="@{/notes}" th:object="${note}" method="post">
-            <span>Новая заметка</span>
-            <input type="text" name="text"/>
+            <span>Новая заметка</span></br>
+            <textarea style="width:300px; height:150px;" name="text"></textarea></br>
             <button type="submit">Добавить</button>
         </form>
     </div>
@@ -32,7 +32,7 @@
                 <td>
                     <form th:action="@{'/notes/' + ${note.id}}" method="post">
                         <input type="checkbox" th:name="done" th:checked="${note.done}"/>
-                        <button type="submit">Done</button>
+                        <button class="btn btn-dark" type="submit">Done</button>
                     </form>
                 </td>
                 <td>
