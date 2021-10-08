@@ -56,10 +56,11 @@
 <h2><a name="interface">Интерфейс</a></h2>
   <ul>
     <li>
-      Интерфейс
-      <a target="_blank" rel="noopener noreferrer" href="/Garomir/ToDoList/blob/main/img/interface.JPG">
-        <img src="/Garomir/ToDoList/blob/main/img/interface.JPG" alt="ScreenShot" style="max-width: 100%;">
-      </a>
+      <p>Интерфейс
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>  
     </li>
     <li>Spring Data Jpa</li>
     <li>Hibernate</li>
