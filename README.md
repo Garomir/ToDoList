@@ -99,3 +99,7 @@
     </li>
   </ul>
 <h2><a name="author">Автор</a></h2>
+  <p>Сафуанов Рамиль</p>
+  <p>Java-разработчик</p>
+  <p><a href="mailto:ramilfin@mail.ru">ramilfin@mail.ru</a></p>
+  <p>+7 9172282922</p>
