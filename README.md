@@ -56,18 +56,46 @@
 <h2><a name="interface">Интерфейс</a></h2>
   <ul>
     <li>
+      <p>Стартовая страница
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/home.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/home.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>  
+    </li>
+    <li>
       <p>Интерфейс
         <a href="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG">
           <img src="https://github.com/Garomir/ToDoList/blob/main/img/interface.JPG" alt="ScreenShot" style="max-width: 100%;">
         </a>
       </p>  
     </li>
-    <li>Spring Data Jpa</li>
-    <li>Hibernate</li>
-    <li>MySQL</li>
-    <li>Java 11</li>
-    <li>Spring Security</li>
-    <li>Thymeleaf</li>
-    <li>HTML, Bootstrap</li>
+    <li>
+      <p>Регистрация
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/registration.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/registration.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>  
+    </li>
+    <li>
+      <p>Аутентификация
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/login.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/login.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>
+    </li>
+    <li>
+      <p>Добавление заметки
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/addnote.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/addnote.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>
+    </li>
+    <li>
+      <p>Отметка о выполнении
+        <a href="https://github.com/Garomir/ToDoList/blob/main/img/setdone.JPG">
+          <img src="https://github.com/Garomir/ToDoList/blob/main/img/setdone.JPG" alt="ScreenShot" style="max-width: 100%;">
+        </a>
+      </p>
+    </li>
   </ul>
 <h2><a name="author">Автор</a></h2>
