@@ -1,5 +1,6 @@
 package com.ramich.ToDoList.controllers;
 
+import com.ramich.ToDoList.entities.Role;
 import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @Controller
 public class UserController {
@@ -42,5 +45,10 @@ public class UserController {
 
         userService.saveUser(user);
         return "redirect:/login";
+    }
+
+    @GetMapping("/adminpanel")
+    public String registerPage(Model model, Principal principal){
+        return "adminpanel";
     }
 }

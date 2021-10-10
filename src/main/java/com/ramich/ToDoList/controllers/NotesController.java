@@ -1,6 +1,7 @@
 package com.ramich.ToDoList.controllers;
 
 import com.ramich.ToDoList.entities.Note;
+import com.ramich.ToDoList.entities.Role;
 import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.services.NoteService;
 import com.ramich.ToDoList.services.UserService;
@@ -33,8 +34,10 @@ public class NotesController {
     @GetMapping
     public String notesPage(Model model, Principal principal){
         User user = userService.findByUsername(principal.getName());
+        Role role = user.getRoles().stream().findFirst().orElseThrow();
         List<Note> notes = noteService.findNotesByUserId(user.getId());
         model.addAttribute("notes", notes);
+        model.addAttribute("role", role.getName());
         model.addAttribute("note", new Note());
         model.addAttribute("username", principal.getName());
         return "notes";

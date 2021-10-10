@@ -5,11 +5,14 @@
         </a>
 
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-<!--            <a class="me-3 py-2 text-dark text-decoration-none" href="/">Главная</a>
-            <a class="me-3 py-2 text-dark text-decoration-none" href="/about">Про нас</a>-->
         </nav>
         <div class="col-md-3 text-end">
             <span th:text="${username}"></span>
+            <div th:switch="${role}">
+                <p th:case="'ROLE_ADMIN'">
+                    <a th:href="@{/adminpanel}" class="btn btn-primary">Admin panel</a>
+                </p>
+            </div>
             <a th:href="@{/logout}" class="btn btn-primary">Logout</a>
         </div>
     </div>
