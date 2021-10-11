@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "notes")
 public class Note {
 
+    //@Transient, если нет необходимости в отображении какого-либо атрибута на БД,
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

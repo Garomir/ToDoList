@@ -48,7 +48,8 @@ public class UserController {
     }
 
     @GetMapping("/adminpanel")
-    public String registerPage(Model model, Principal principal){
+    public String adminPage(Model model){
+        model.addAttribute("users", userService.findAll());
         return "adminpanel";
     }
 }
