@@ -15,11 +15,15 @@
             <thead>
             <tr>
                 <th scope="col">Username</th>
+                <th scope="col">Role</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="user : ${users}">
                 <td th:text="${user.username}"/>
+                <div th:each="role : ${user.roles}">
+                    <td th:text="${role.name}"/>
+                </div>
             </tr>
             </tbody>
         </table>
