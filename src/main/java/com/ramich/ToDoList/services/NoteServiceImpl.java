@@ -1,6 +1,11 @@
 package com.ramich.ToDoList.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.ramich.ToDoList.entities.Note;
+import com.ramich.ToDoList.entities.Notes;
+import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.repos.NoteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,5 +70,37 @@ public class NoteServiceImpl implements NoteService{
             result = noteRepo.getMaxValueForId() + 1;
         }
         return result;
+    }
+
+    @Override
+    public void saveNotesFromXml(String xml, User user) {
+        //Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
+        String newXml = xml.replace("<<Инфотех>>", "\"Инфотех\"");
+        ObjectMapper xmlMapper = new XmlMapper();
+        Notes notes = null;
+        try {
+            //маппинг заметок из xml на объект notes
+            notes = xmlMapper.readValue(newXml, Notes.class);
+            //прохожу по всем заметкам
+            for (Note n : notes.getNote()) {
+                if (n.getId() == 344) {
+                    //проверка есть ли в бд такой id
+                    Optional<Note> note = findNote(344);
+                    if (note.isPresent()){
+                        System.out.println("Запись с id: 344 уже существует");
+                    } else {
+                        //если нету, то сохраняю
+                        n.setUser(user);
+                        addNote(n);
+                    }
+                }else {
+                    n.setUser(user);
+                    n.setId(getNewIdForNote());
+                    addNote(n);
+                }
+            }
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
     }
 }

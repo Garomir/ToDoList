@@ -62,7 +62,9 @@ public class NotesController {
     @PostMapping(value = "/xml")
     public String addXmlNotes(@RequestParam String xmlnotes, Principal principal){
         User user = userService.findByUsername(principal.getName());
-        //Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
+        noteService.saveNotesFromXml(xmlnotes, user);
+
+        /*//Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
         String xml = xmlnotes.replace("<<Инфотех>>", "\"Инфотех\"");
         ObjectMapper xmlMapper = new XmlMapper();
         Notes notes = null;
@@ -89,7 +91,7 @@ public class NotesController {
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-        }
+        }*/
         return "redirect:/notes";
     }
 
