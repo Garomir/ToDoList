@@ -74,6 +74,27 @@ public class NoteServiceImpl implements NoteService{
 
     @Override
     public void saveNotesFromXml(String xml, User user) {
+        List<Note> notes = parseXml(xml);
+        for (Note n : notes) {
+            if (n.getId() == 344) {
+                //проверка есть ли в бд такой id
+                Optional<Note> note = findNote(344);
+                if (note.isPresent()){
+                    System.out.println("Запись с id: 344 уже существует");
+                } else {
+                    //если нету, то сохраняю
+                    n.setUser(user);
+                    addNote(n);
+                }
+            }else {
+                n.setUser(user);
+                n.setId(getNewIdForNote());
+                addNote(n);
+            }
+        }
+    }
+
+    public List<Note> parseXml(String xml){
         //Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
         String newXml = xml.replace("<<Инфотех>>", "\"Инфотех\"");
         ObjectMapper xmlMapper = new XmlMapper();
@@ -81,26 +102,10 @@ public class NoteServiceImpl implements NoteService{
         try {
             //маппинг заметок из xml на объект notes
             notes = xmlMapper.readValue(newXml, Notes.class);
-            //прохожу по всем заметкам
-            for (Note n : notes.getNote()) {
-                if (n.getId() == 344) {
-                    //проверка есть ли в бд такой id
-                    Optional<Note> note = findNote(344);
-                    if (note.isPresent()){
-                        System.out.println("Запись с id: 344 уже существует");
-                    } else {
-                        //если нету, то сохраняю
-                        n.setUser(user);
-                        addNote(n);
-                    }
-                }else {
-                    n.setUser(user);
-                    n.setId(getNewIdForNote());
-                    addNote(n);
-                }
-            }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+        assert notes != null;
+        return notes.getNote();
     }
 }

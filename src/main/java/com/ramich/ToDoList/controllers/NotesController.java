@@ -63,35 +63,6 @@ public class NotesController {
     public String addXmlNotes(@RequestParam String xmlnotes, Principal principal){
         User user = userService.findByUsername(principal.getName());
         noteService.saveNotesFromXml(xmlnotes, user);
-
-        /*//Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
-        String xml = xmlnotes.replace("<<Инфотех>>", "\"Инфотех\"");
-        ObjectMapper xmlMapper = new XmlMapper();
-        Notes notes = null;
-        try {
-            //маппинг заметок из xml на объект notes
-            notes = xmlMapper.readValue(xml, Notes.class);
-            //прохожу по всем заметкам
-            for (Note n : notes.getNote()) {
-                if (n.getId() == 344) {
-                    //проверка есть ли в бд такой id
-                    Optional<Note> note = noteService.findNote(344);
-                    if (note.isPresent()){
-                        System.out.println("Запись с id: 344 уже существует");
-                    } else {
-                        //если нету, то сохраняю
-                        n.setUser(user);
-                        noteService.addNote(n);
-                    }
-                }else {
-                    n.setUser(user);
-                    n.setId(noteService.getNewIdForNote());
-                    noteService.addNote(n);
-                }
-            }
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }*/
         return "redirect:/notes";
     }
 
