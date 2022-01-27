@@ -15,7 +15,7 @@ public class Note implements Serializable {
 
     //@Transient, если нет необходимости в отображении какого-либо атрибута на БД,
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @JacksonXmlProperty(localName = "id", isAttribute = true)
     private int id;
     @Column(name = "text")

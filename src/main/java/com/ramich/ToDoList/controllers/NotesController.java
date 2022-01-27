@@ -10,13 +10,14 @@ import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.services.NoteService;
 import com.ramich.ToDoList.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityNotFoundException;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/notes")
@@ -57,26 +58,38 @@ public class NotesController {
         return "redirect:/notes";
     }
 
-    @PostMapping(value = "/xml"/*, produces = MediaType.APPLICATION_XML_VALUE*/)
+    //Эндпоинт, который принимает xml в виде строки от клиента
+    @PostMapping(value = "/xml")
     public String addXmlNotes(@RequestParam String xmlnotes, Principal principal){
         User user = userService.findByUsername(principal.getName());
-
+        //Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
+        String xml = xmlnotes.replace("<<Инфотех>>", "\"Инфотех\"");
         ObjectMapper xmlMapper = new XmlMapper();
         Notes notes = null;
         try {
-            notes = xmlMapper.readValue(xmlnotes, Notes.class);
+            //маппинг заметок из xml на объект notes
+            notes = xmlMapper.readValue(xml, Notes.class);
+            //прохожу по всем заметкам
             for (Note n : notes.getNote()) {
                 if (n.getId() == 344) {
-                    n.setId(344);
+                    //проверка есть ли в бд такой id
+                    Optional<Note> note = noteService.findNote(344);
+                    if (note.isPresent()){
+                        System.out.println("Запись с id: 344 уже существует");
+                    } else {
+                        //если нету, то сохраняю
+                        n.setUser(user);
+                        noteService.addNote(n);
+                    }
+                }else {
+                    n.setUser(user);
+                    n.setId(noteService.getNewIdForNote());
+                    noteService.addNote(n);
                 }
-                n.setUser(user);
-                noteService.addNote(n);
-                //System.out.println(n.getText() + ", " + n.isDone() + ", " + n.getId());
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
         return "redirect:/notes";
     }
 
@@ -89,13 +102,12 @@ public class NotesController {
     @PostMapping("/{id}")
     public String setDone(@PathVariable("id") int id,
                           @ModelAttribute(value = "done") String done){
-        Note note = noteService.findNote(id);
-        if (done.equals("on")){
-            note.setDone(true);
-        } else {
-            note.setDone(false);
+        Optional<Note> note = noteService.findNote(id);
+        if (note.isEmpty()){
+            throw new EntityNotFoundException("Такой записи не существует");
         }
-        noteService.updateNote(id, note);
+        note.get().setDone(done.equals("on"));
+        noteService.updateNote(id, note.get());
         return "redirect:/notes";
     }
 }

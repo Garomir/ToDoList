@@ -30,12 +30,8 @@ public class NoteServiceImpl implements NoteService{
     }
 
     @Override
-    public Note findNote(int id) {
-        Optional<Note> note = noteRepo.findById(id);
-        if (note.isEmpty()){
-            throw new EntityNotFoundException("Такой записи не существует");
-        }
-        return note.get();
+    public Optional<Note> findNote(int id) {
+        return noteRepo.findById(id);
     }
 
     @Override
@@ -58,5 +54,16 @@ public class NoteServiceImpl implements NoteService{
     @Override
     public List<Note> findNotesByUserId(int userId) {
         return noteRepo.findNotesByUserId(userId);
+    }
+
+    @Override
+    public int getNewIdForNote() {
+        int result;
+        if (noteRepo.getCountOfNotes() == 0){
+            result = 1;
+        } else {
+            result = noteRepo.getMaxValueForId() + 1;
+        }
+        return result;
     }
 }
