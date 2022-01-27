@@ -17,6 +17,13 @@
         </form>
     </div>
     <div class="container mt-5">
+        <form th:action="@{/notes/xml}" method="post">
+            <span>Новые заметки в формате xml</span></br>
+            <textarea style="width:300px; height:150px;" th:value="${xmlnotes}" name="xmlnotes"></textarea></br>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <div class="container mt-5">
         <h3>Мои заметки:</h3>
         <table class="table">
             <thead>

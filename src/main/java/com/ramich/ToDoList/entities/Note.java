@@ -1,24 +1,35 @@
 package com.ramich.ToDoList.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "notes")
-public class Note {
+public class Note implements Serializable {
 
     //@Transient, если нет необходимости в отображении какого-либо атрибута на БД,
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JacksonXmlProperty(localName = "id", isAttribute = true)
     private int id;
     @Column(name = "text")
+    @JacksonXmlProperty(localName = "text")
     private String text;
     @Column(name = "done")
+    @JacksonXmlProperty(localName = "done", isAttribute = true)
     private boolean done;
 
     public Note() {
+    }
+
+    public Note(String text) {
+        this.text = text;
     }
 
     public Note(int id, String text, boolean done) {
