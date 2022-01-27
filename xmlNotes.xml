@@ -1,0 +1,11 @@
+<notes xmlns="urn://test-todo-list.org">
+    <note>
+          <text>Написать резюме</text>
+    </note>
+    <note>
+          <text>Договориться о собеседовании</text>
+    </note>
+    <note id="344" done="true">
+          <text>Устроиться на работу в <<Инфотех>></text>
+    </note>
+</notes>
