@@ -1,5 +1,6 @@
 package com.ramich.ToDoList.services;
 
+import com.ramich.ToDoList.ToDoListApplication;
 import com.ramich.ToDoList.entities.Note;
 import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.repos.NoteRepo;
@@ -11,16 +12,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(MockitoJUnitRunner.class)
 public class NoteServiceImplTest {
 
-    private List<Note> notes = null;
+    /*private List<Note> notes = null;
 
     private final String xml = "<notes xmlns=\"urn://test-todo-list.org\">\n" +
             "    <note>\n" +
@@ -53,5 +58,5 @@ public class NoteServiceImplTest {
         noteService.saveNotesFromXml(xml, new User());
         assertEquals(3, notes.size());
         assertEquals(344, notes.get(2).getId());
-    }
+    }*/
 }
