@@ -25,5 +25,3 @@ create table notes (
     user_id int not null,
     primary key(id));
 
-insert into users(id, username, password) values (1, 'Ramil', '$2a$10$3Vl28ncAabMw0f95/2d8/eMH.cAjoCNJdY8r7RF2iZIqV6VO2xfxu');
-insert into users_roles(user_id, role_id) values (1, 2), (1, 1);

@@ -1,10 +1,6 @@
 package com.ramich.ToDoList.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.ramich.ToDoList.entities.Note;
-import com.ramich.ToDoList.entities.Notes;
 import com.ramich.ToDoList.entities.Role;
 import com.ramich.ToDoList.entities.User;
 import com.ramich.ToDoList.services.NoteService;
@@ -45,7 +41,6 @@ public class NotesController {
         model.addAttribute("notes", notes);
         model.addAttribute("role", role.getName());
         model.addAttribute("note", new Note());
-        //model.addAttribute("xmlnotes", new Note());
         model.addAttribute("username", principal.getName());
         return "notes";
     }

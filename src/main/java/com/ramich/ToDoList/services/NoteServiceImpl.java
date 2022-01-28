@@ -94,6 +94,7 @@ public class NoteServiceImpl implements NoteService{
         }
     }
 
+    @Override
     public List<Note> parseXml(String xml){
         //Заменяю угловые скобки на ковычки в тексте одной из заметок, т.к. с ними вылетает исключение
         String newXml = xml.replace("<<Инфотех>>", "\"Инфотех\"");

@@ -15,4 +15,5 @@ public interface NoteService {
     List<Note> findNotesByUserId(int userId);
     int getNewIdForNote();
     void saveNotesFromXml(String xml, User user);
+    public List<Note> parseXml(String xml);
 }
