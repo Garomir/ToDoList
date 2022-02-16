@@ -50,7 +50,7 @@ public class NoteServiceImplTest {
 
     @Test //тест сохранения одной заметки в бд
     public void saveNoteTest(){
-        Note note = new Note(344, "Устроиться на работу в \"Инфотех\"", true);
+        Note note = new Note(344, "Устроиться на работу в <<Инфотех>>", true);
         User user = new User();
         user.setUsername("Ramil");
         user.setPassword("Ramil");
@@ -83,7 +83,7 @@ public class NoteServiceImplTest {
         List<Note> notes = noteService.findNotesByUserId(savedUser.getId());
 
         assertEquals(3, notes.size());
-        assertEquals("Устроиться на работу в \"Инфотех\"", notes.get(2).getText());
+        assertEquals("Устроиться на работу в <<Инфотех>>", notes.get(2).getText());
         assertEquals(344, notes.get(2).getId());
     }
 }
